@@ -1,3 +1,3 @@
 # FakeChain: Exposing Shallow Cues in Multi-Step Deepfake Detection
 
-FakeChain Dataset sample
+We are providing samples of Multi-step manipulations under various settings.
