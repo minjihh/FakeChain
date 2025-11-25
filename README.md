@@ -8,7 +8,7 @@ We are providing samples of **multi-step** manipulations under various settings.
 ![FakeChain Overview](fig/cikm_thumb.PNG)
 
 
-### Manipulation Depth & Composition
+### 🧩 Manipulation Depth & Composition
 
 We organize the dataset by manipulation depth:
 
