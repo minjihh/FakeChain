@@ -20,16 +20,22 @@ We organize the dataset by manipulation depth:
   - `SDXL/` – Diffusion-based (Stable Diffusion XL)
 
 - `2Step/`: Two-step compositional manipulations  
-  Each subfolder corresponds to an ordered pair of distinct generators, e.g.,
-  `FF_SG3` (FaceFusion → StyleGAN3), `SG3_SD3` (StyleGAN3 → Stable Diffusion 3), etc.  
-  Homogeneous pairs (same generator twice) are not used.
+  Each subfolder corresponds to an ordered pair of **different generators**.  
+  Pairs such as `FF_SG3`, `SG3_SD3`, or `SDXL_FF` are included.  
+  However, same-generator pairs (e.g., `FF_FF`, `SG3_SG3`, `SS_SS`, `SD3_SD3`, `SDXL_SDXL`) are **not** used.
+
+  Note: Both cross-GAN directions (e.g., `SG3_SS` and `SS_SG3`) **do** exist, but **GAN→same GAN** (e.g., `SG3_SG3`, `SS_SS`) does not.
 
 - `3Step/`: Three-step compositional manipulations  
-  Homogeneous combinations are excluded to prioritize realistic and diverse compositional scenarios.  
-  Each 3-step chain selects exactly one method from each family:
+  Only combinations that contain **one method from each family** are included:  
   - FaceSwap: `FF`
   - GAN: `SG3` or `SS`
   - Diffusion: `SD3` or `SDXL`
+
+  Therefore, **no two-step repetition of the same family occurs in the chain**.  
+  For example, `FF_SG3_SD3`, `SDXL_SS_FF`, etc., are included, whereas  
+  combinations containing two GANs (e.g., `FF_SG3_SS`, `SG3_SS_SD3`) or two Diffusion models (e.g., `FF_SD3_SDXL`) are **not** included.
+
 
 ---
 
